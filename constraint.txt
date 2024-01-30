@@ -1,0 +1,23 @@
+public class ContinueBreakExample {
+    public static void main(String[] args) {
+        // Example using continue
+        System.out.println("Example using 'continue':");
+        for (int i = 1; i <= 5; i++) {
+            if (i == 3) {
+                // Skip the rest of the loop for i=3
+                continue;
+            }
+            System.out.println("Iteration " + i);
+        }
+
+        // Example using break
+        System.out.println("\nExample using 'break':");
+        for (int j = 1; j <= 5; j++) {
+            if (j == 4) {
+                // Exit the loop when j=4
+                break;
+            }
+            System.out.println("Iteration " + j);
+        }
+    }
+}
