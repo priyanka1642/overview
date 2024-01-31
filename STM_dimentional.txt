@@ -1,0 +1,75 @@
+//SINGLE Dimentional Array
+
+package com.practice;
+
+public class SDA {
+public static void main(String[] args) {
+	int a[]= {10,20,30};
+	for(int i=0;i<3;i++) {
+		System.out.println(a[i]);
+	}
+}
+}
+
+// TWO Dimentional Array
+
+package com.practice;
+
+import java.util.Scanner;
+
+public class Tda {
+	
+	public static void main(String[] args) {
+		int [][] a= new int[2][2];
+		Scanner sc = new Scanner(System.in);
+		for(int i=0;i<2;i++) {
+			for(int j=0;j<2;j++) {
+				System.out.println("enter row "+(i+1)+ " col " +(j+1)+ " value");
+				a[i][j] = sc.nextInt();
+			}
+		}
+		for(int i=0;i<2;i++) {
+			for(int j=0;j<2;j++) {
+				System.out.println(a[i][j]+"\t");
+			}
+			System.out.println();
+		}
+
+	}
+}
+
+
+//MULTI Dimentional Array
+
+package com.practice;
+
+public class MDA {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][] a= {{1,2},{3,4}};
+		int[][] b= {{1,2},{3,4}};
+		int[][] c=new int[2][2];
+		for(int i=0;i<2;i++)
+		{
+			for(int j=0;j<2;j++)
+			{
+				c[i][j]=0;
+				for(int k=0;k<2;k++)
+				{
+					c[i][j]=a[i][k]*b[k][j]+c[i][j];
+				}
+			}
+		}
+		for(int i=0;i<2;i++)   //for printing array
+		{
+			for(int j=0;j<2;j++)
+			{
+				System.out.print(c[i][j]+"\t");
+			}
+			System.out.println();
+		}
+	}
+
+
+}
