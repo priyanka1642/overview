@@ -1,0 +1,26 @@
+package com.practice;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class LLQue {
+
+	public static void main(String[] args) {
+		Queue<String> ql= new LinkedList <String>();
+		{
+			ql.add("mango");
+			ql.add("papaya");
+			ql.add("banana");
+			ql.add("apple");
+			
+			System.out.println(ql);
+			
+			String s1=ql.peek(); // print 1st element
+			System.out.println("peek element:" +s1);
+			
+			String s2=ql.poll();     // access and remove the first element
+			System.out.println("remove element: " +s2);
+		}
+	}
+
+}
