@@ -1,0 +1,38 @@
+package com.practice;
+
+import java.util.Iterator;
+import java.util.Vector;
+
+public class vector {
+
+	public static void main(String[] args) {
+		Vector<String> animals= new Vector<String>();   //create 
+		animals.add("dog");   // add 
+		animals.add("horse");
+		animals.add("cat");
+		animals.add("tiger");
+		animals.add("lion");
+		
+		System.out.println(animals);
+		
+		// get value from index
+		String v1=animals.get(3);
+		System.out.println(v1);
+		
+		//remove element in vector
+		String v2=animals.remove(4);
+		System.out.println(v2);
+		
+		// print array without square bracket
+		Iterator<String> iterate = animals.iterator();
+        System.out.print("Vector: ");
+        while(iterate.hasNext()) {
+            System.out.print(iterate.next());
+            System.out.print(", ");
+
+
+	}
+
+}
+}
+

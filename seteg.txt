@@ -1,0 +1,33 @@
+package com.practice;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class SetEx {                     // In set's we use only add method to add the element in array 
+								//BUT
+					 // In map's we use only put method to add the element in array 
+	
+	public static void main(String[] args) {
+		Set<String> s=new HashSet<>();   // Hashset is used for to only print the array without using any sequence and remove all 
+										 //	duplicate element
+		s.add("Paritosh");
+		s.add("Murnmai");
+		s.add("Nasrin");
+		s.add("Amrish");
+		s.add("Nasrin");
+		s.add("Praveen");
+		System.out.println(s);
+	Set<String> s1=new TreeSet<>();     // Treeset is used for sorting the array in ascending manner 
+										//	remove all duplicate element
+		s1.add("Paritosh");
+		s1.add("Murnmai");
+		s1.add("Nasrin");
+		s1.add("Amrish");
+		s1.add("Nasrin");
+		s1.add("Praveen");
+		System.out.println(s1);
+
+	}
+
+}
