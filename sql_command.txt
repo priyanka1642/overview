@@ -1,0 +1,80 @@
+// database creation
+   create database amber;
+
+// use
+   use amber;
+
+// create table
+    create table department(dep_id INT PRIMARY KEY,
+    dep_name VARCHAR(25),
+    dep_loc varchar(20));
+    
+    CREATE TABLE salary_grade (
+    grade_id INT PRIMARY KEY,
+    min_salary DECIMAL(10, 2),
+    max_salary DECIMAL(10, 2));
+
+     CREATE TABLE employees (
+     emp_id INT PRIMARY KEY,
+     emp_name VARCHAR(15),
+     job_name VARCHAR(10),
+     manager_id INT,
+     hire_date DATE,
+     salary DECIMAL(10, 2),
+     commission DECIMAL(7, 2),
+     dep_id INT, -- Assuming you want to reference department_id
+     CONSTRAINT fk_dep_id FOREIGN KEY (dep_id) REFERENCES department(dep_id));
+
+//show all tables
+  show tables;
+
+// insert data
+	INSERT INTO department values (1,'account','pune');
+	INSERT INTO department values (2,'sales','pune');
+	INSERT INTO department values (3,'IT','mumbai');
+	INSERT INTO department values (4,'marketing','pune');
+
+	
+	INSERT INTO salary_grade values (1,1000,5000);
+	INSERT INTO salary_grade values (2,50000,100000);
+	INSERT INTO salary_grade values (3,500,7000);
+	INSERT INTO salary_grade values (4,8000,100000);
+
+	
+	INSERT INTO employees values (1,'priya','techical support',1001,'2000-11-01',50000,2,3);
+	INSERT INTO  employees values (2,'kanchan','sales exe',1001,'2000-11-01',50000,2,2);
+	INSERT INTO  employees values (3,'sharmili','financial analyst',1001,'2000-11-01',50000,2,1);
+	INSERT INTO employees values (4,'diksha','s/w engineer',1001,'2000-11-01',50000,2,3);
+
+// show all the values in dep table
+	select * from department;
+	select * from salary_grade;
+	select * from employees;
+
+// add column
+	ALTER TABLE employees
+	ADD COLUMN work_hr varchar(10);
+
+// modify column
+	ALTER TABLE employees
+	MODIFY COLUMN work_hr int;
+
+// drop table
+	ALTER TABLE employees
+	DROP COLUMN manager_id;
+
+// decsription 
+	desc employees;
+
+// fetch salary table
+	select salary from employees;
+
+// distinct job name
+SELECT DISTINCT 'sales_exe'
+FROM employees;
+
+// drop specific column using drop
+ALTER TABLE employees
+DROP COLUMN manager_id;
+
+    
