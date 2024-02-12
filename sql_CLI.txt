@@ -1,0 +1,208 @@
+SELECT emp_name, salary * 1.15 AS increased_salary_in_dollars
+FROM employees;
+
+SELECT CONCAT(emp_name, ' & ', job_name) AS employee_job_format
+FROM employees;
+
+SELECT CONCAT(emp_name, '(', job_name, ')') AS employee_output
+FROM employees;
+
+
+
+mysql> select length('mysql') as char_len;
++----------+
+| char_len |
++----------+
+|        5 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> select concat('mrunmai','pallavi') as  concat_string;
++----------------+
+| concat_string  |
++----------------+
+| mrunmaipallavi |
++----------------+
+1 row in set (0.03 sec)
+
+mysql> select Lcase('Gokul like praveen') as lowerString;
++--------------------+
+| lowerString        |
++--------------------+
+| gokul like praveen |
++--------------------+
+1 row in set (0.02 sec)
+
+mysql> select Replace('All food is not good','good','bad') as replacedString;
++---------------------+
+| replacedString      |
++---------------------+
+| All food is not bad |
++---------------------+
+1 row in set (0.01 sec)
+
+mysql> select trim('great' from 'great things') as trimmedstring;
++---------------+
+| trimmedstring |
++---------------+
+|  things       |
++---------------+
+1 row in set (0.01 sec)
+
+mysql> select Ltrim('great' from 'great things') as ltrimmed;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from 'great things') as ltrimmed' at line 1
+mysql> select substr('great things',1,5) as substring;
++-----------+
+| substring |
++-----------+
+| great     |
++-----------+
+1 row in set (0.01 sec)
+
+mysql> select abs(-10) as absolute;
++----------+
+| absolute |
++----------+
+|       10 |
++----------+
+1 row in set (0.14 sec)
+
+mysql> select round(10.456) as rounded;
++---------+
+| rounded |
++---------+
+|      10 |
++---------+
+1 row in set (0.09 sec)
+
+mysql> select ceil(10.45) as ceilvalue;
++-----------+
+| ceilvalue |
++-----------+
+|        11 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select floort(10.45) ad floorvalue;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'floorvalue' at line 1
+mysql> select floor(10.45) as floorvalue;
++------------+
+| floorvalue |
++------------+
+|         10 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select power(2,3) as powervalue;
++------------+
+| powervalue |
++------------+
+|          8 |
++------------+
+1 row in set (0.01 sec)
+
+mysql> select sqrt(25) as  squared value;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'value' at line 1
+mysql> select sqrt(25) as  squaredvalue;
++--------------+
+| squaredvalue |
++--------------+
+|            5 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select exp(45) as exponentialvalues;
++-----------------------+
+| exponentialvalues     |
++-----------------------+
+| 3.4934271057485095e19 |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> select log(2.4) as logarthimicvalue;
++--------------------+
+| logarthimicvalue   |
++--------------------+
+| 0.8754687373538999 |
++--------------------+
+1 row in set (0.02 sec)
+
+mysql> select mod(17,5) as modvalue;
++----------+
+| modvalue |
++----------+
+|        2 |
++----------+
+1 row in set (0.01 sec)
+
+mysql>mysql> SELECT MIN(salary) from employees;
++-------------+
+| MIN(salary) |
++-------------+
+|    20000.00 |
++-------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT MAX(salary) from employees;
++-------------+
+| MAX(salary) |
++-------------+
+|    30000.00 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT AVG(salary) from employees;
++--------------+
+| AVG(salary)  |
++--------------+
+| 22500.000000 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT SUM(salary) from employees;
++-------------+
+| SUM(salary) |
++-------------+
+|    90000.00 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(salary) from employees;
++---------------+
+| COUNT(salary) |
++---------------+
+|             4 |
++---------------+mysql> SELECT salary , SUM(salary) from employees GROUP BY salary;
++----------+-------------+
+| salary   | SUM(salary) |
++----------+-------------+
+| 20000.00 |    60000.00 |
+| 30000.00 |    30000.00 |
++----------+-------------+
+2 rows in set (0.09 sec)
+
+mysql> SELECT dept_id, SUM(salary) from employees GROUP BY dept_id;
++---------+-------------+
+| dept_id | SUM(salary) |
++---------+-------------+
+|     101 |    60000.00 |
+|     103 |    30000.00 |
++---------+-------------+
+2 rows in set (0.00 sec)
+
+mysql>
+mysql> SELECT manager_id, SUM(salary) from employees GROUP BY manager_id;
++------------+-------------+
+| manager_id | SUM(salary) |
++------------+-------------+
+|       1101 |    60000.00 |
+|       1102 |    30000.00 |
++------------+-------------+
+2 rows in set (0.00 sec)                                                                                                                                                                                          mysql> SELECT manager_id, SUM(salary) from employees GROUP BY manager_id HAVING (SUM(salary)>40000);
++------------+-------------+
+| manager_id | SUM(salary) |
++------------+-------------+
+|       1101 |    60000.00 |
++------------+-------------+
+1 row in set (0.00 sec)
+1 row in set (0.00 sec)
