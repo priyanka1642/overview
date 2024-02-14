@@ -1,0 +1,46 @@
+package com.excepction;
+
+public class Arith {
+
+	public static void main(String[] args) {
+		try {
+			String nm="23s";   // suppose here we give string nm=null; then its throws null pointer exception
+	        //System.out.println(nm.length());      // NullPointerException
+			//int i = Integer.parseInt(nm);         // NumberFormatException
+			
+			int[] a= {1,2,3};
+	        System.out.println(a[3]);               // ArrayIndexOutOfBoundsException
+		}
+		catch(NullPointerException | NumberFormatException | ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+}
+
+
+package com.excepction;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Arithmatic {
+
+	public static void main(String[] args) {
+		try {
+			int a,b,c;
+			Scanner sc =new Scanner(System.in);
+			a= sc.nextInt();
+			b= sc.nextInt();
+			c=a/b;
+			System.out.println(c);
+		}
+		catch(ArithmeticException | InputMismatchException e) {  // directly print without syso stmt "java.lang.ArithmeticException: / by zero"
+			System.out.println(e);
+			System.out.println("0 is not possible on denominator");
+		}
+	}
+
+}

@@ -1,0 +1,38 @@
+package com.abstractkey;
+
+public abstract class Grandpapa {
+	abstract void nature();
+	abstract void sleeping_hr();
+}
+
+
+package com.abstractkey;
+
+public class Maincls {
+
+	public static void main(String[] args) {
+		Papa p=new Papa();
+		p.nature();
+		p.sleeping_hr();
+
+	}
+
+}
+
+
+package com.abstractkey;
+
+public class Papa extends Grandpapa {
+
+	@Override
+	void nature() {
+		System.out.println("normal");
+	}
+
+	@Override
+	void sleeping_hr() {
+		System.out.println("8 hrs");
+		
+	}
+
+}
